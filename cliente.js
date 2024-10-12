@@ -1,9 +1,9 @@
 
 //Clase cliente para el simulador
 class Cliente {
-    constructor(nombre, eddad, compras, telefono) {
+    constructor(nombre, edad, compras, telefono) {
         this.nombre = nombre
-        this.eddad = eddad
+        this.edad = edad
         this.compras = compras  // Este es un array con los montos de compras realizadas
         this.telefono = telefono
     }
@@ -101,9 +101,10 @@ encotnrarPorNombre.forEach(cliente => {
 // Buscar cliente por edad
 
 console.log("\nBuscar cliente por edad:");
-const encotnrarPorEdad = registro.buscarPorEdad(30);
-encotnrarPorEdad.forEach(cliente => {
+const encontrarPorEdad = registro.buscarPorEdad(25);
+encontrarPorEdad.forEach(cliente => {
     cliente.mostrarInfo();
+    console.log("hasta aquí esta bien");
 })
 
 // Categorizar clientes por compras
