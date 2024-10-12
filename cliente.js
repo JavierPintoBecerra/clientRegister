@@ -59,4 +59,54 @@ class RegistroClientes{
     });
 
     }
+
+    // Método para mostrar la información de todos los clientes
+    mostrarClientes(){
+        for (let cliente of this.clientes){
+            cliente.mostrarInfo();
+        }
+    }
 }
+
+
+// Crear clientes
+
+const cliente1 = new Cliente("Juan", 30, [100, 200, 300], 123456789);
+const cliente2 = new Cliente("Pedro", 25, [200, 300], 987654321);
+const cliente3 = new Cliente("Maria", 35, [500, 600], 456789123);
+
+// Crear registro de clientes
+
+const registro = new RegistroClientes();
+
+// Agregar clientes
+
+registro.agregar(cliente1);
+registro.agregar(cliente2);
+registro.agregar(cliente3);
+
+// Mostrar todos los clientes
+
+console.log("Todos los clientes en el registro:");
+registro.mostrarClientes();
+
+// Buscar cliente por nombre 
+
+console.log("\nBuscar cliente por nombre:");
+const encotnrarPorNombre = registro.buscarPorNombre("pedro");
+encotnrarPorNombre.forEach(cliente => {
+    cliente.mostrarInfo();
+})
+
+// Buscar cliente por edad
+
+console.log("\nBuscar cliente por edad:");
+const encotnrarPorEdad = registro.buscarPorEdad(30);
+encotnrarPorEdad.forEach(cliente => {
+    cliente.mostrarInfo();
+})
+
+// Categorizar clientes por compras
+
+console.log("\nCategorizar clientes por compras:");
+registro.categorizarClientes();
